@@ -1,0 +1,21 @@
+{
+  "name": "video2sb3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/spark-md5": "^3.0.5",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "jszip": "^3.10.1",
+    "spark-md5": "^3.0.2"
+  }
+}

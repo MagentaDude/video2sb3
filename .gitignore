@@ -1,5 +1,4 @@
-# Built projects during testing
-result.sb3
-
-# Mac stuff
 .DS_Store
+.vscode
+node_modules
+thumbs.db

@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+input {
+    padding-bottom: 8px;
+    color: darkgray;
+}
+
+#download {
+    color: white;
+}
+
+#gh {
+    width: 32px;
+    height: 32px;
+}
