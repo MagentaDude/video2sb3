@@ -1,4 +1,4 @@
-import lamejs from '@breezystack/lamejs';
+import lamejs from '@breezystack/lamejs'
 import JSZip from 'jszip'
 import SparkMD5 from 'spark-md5'
 import './style.css'
@@ -18,7 +18,7 @@ let canPlay = false
 async function seeked() {
     if (video.ended) {
         // When the costumes are done loading
-        project += '],"sounds":['
+        project = project.slice(0, -1) + '],"sounds":['
         download.text = 'Converting to mp3...'
         // Now we convert the video's audio into an mp3 via lamejs
         const audioCtx = new AudioContext()
@@ -41,7 +41,7 @@ async function seeked() {
         // Now we add it to JSZip and the project.json
         const blob = new Blob(mp3Data as BlobPart[], { type: "audio/mp3" })
         const md5 = SparkMD5.hash(await blob.text())
-        project += '{"name":"Audio","dataFormat":"mp3","assetId":"' + md5 + '","md5ext":"' + md5 + '.mp3"},'
+        project += '{"name":"Audio","dataFormat":"mp3","assetId":"' + md5 + '","md5ext":"' + md5 + '.mp3"}' // Add , to the end if ever adding multiple sounds
         zip.file(md5 + '.mp3', blob)
         // Finally we can finish the project.json and zip it!
         zip.file('project.json', project + '],"volume":100,"layerOrder":1,"visible":true,"x":0,"y":0,"size":100,"direction":90,"draggable":false,"rotationStyle":"all around"}],"monitors":[],"extensions":[],"meta":{"semver":"3.0.0","vm":"0.2.0","agent":""}}')
